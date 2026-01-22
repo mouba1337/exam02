@@ -7,33 +7,30 @@ typedef struct    s_list
     void    *data;
 }       t_list;
 
+#include <stdlib.h>
+#include "ft_list.h"
+
 void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
-    t_list  *ff;
+    t_list *cur;
 
-    if (!begin_list || !*begin_list)
+    if (begin_list == NULL || *begin_list == NULL)
         return;
-    while (*begin_list && cmp(data_ref, (*begin_list)->data) == 0)
+
+    while (*begin_list)
     {
-        ff = *begin_list;
-        *begin_list = (*begin_list)->next;
-        free(ff);
-    }
-    ff = *begin_list;
-    while (ff && ff->next)
-    {
-        if (cmp(data_ref, ff->next->data) == 0)
+        if (cmp((*begin_list)->data, data_ref) == 0)
         {
-            t_list  *temp;
-            temp = ff->next;
-            ff->next = temp->next;
-            free(temp);
+            cur = *begin_list;
+            *begin_list = cur->next;
+            free(cur);
         }
         else
-            ff = ff->next;
+        {
+            begin_list = &((*begin_list)->next);
+        }
     }
 }
-
 
 
 
