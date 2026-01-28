@@ -13,7 +13,6 @@ int main(int ac, char **av)
         seen[i] = '0';
         i++;
     }
-    
     if (ac == 3)
     {
         i = 0;

@@ -37,5 +37,5 @@ int	ft_atoi_base(const char *str, int str_base)
 #include <stdio.h>
 int main(void)
 {
-    printf("Input: '123', Base 10 -> Result: %d\n", ft_atoi_base("GG", 10));
+    printf("%d\n", ft_atoi_base("0110110fd5", 2));
 }

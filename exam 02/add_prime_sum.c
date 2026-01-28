@@ -39,7 +39,7 @@ void    putnbr(int n)
 {
     char    c;
 
-    if (n >= 0)
+    if (n >= 10)
         putnbr(n / 10);
     c = (n % 10) + '0';
     write (1, &c, 1);

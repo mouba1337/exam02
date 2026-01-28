@@ -57,7 +57,6 @@ char    **ft_split(char *str)
 
     c = count(str);
     resu = malloc(sizeof(char *) * (c + 1));
-
     if (!resu)
         return (NULL);
     i = 0;
